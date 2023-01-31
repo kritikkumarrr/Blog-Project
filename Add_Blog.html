@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    .me-2 {
+        border-radius: 10px;
+    }
+
+    .btn {
+        border-radius: 25px;
+        margin-right: 12px;
+    }
+
+    .container {
+        margin-top: 25px;
+        padding-top: 75px;
+    }
+    .author , .blog {
+        color: rgb(228, 77, 77);
+        font-weight: bold;
+        font-family: cursive;
+    }
+</style>
+
+<body>
+    <!--Head navbar-->
+    <header class="head">
+        <nav class="navbar navbar-expand-lg bg-secondary navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="blog-icon.png" width="45">
+                </a>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="About_us.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Add_Blog.html">Add Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact_us.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Toggler-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="d-flex" role="search">
+                    <input class=" form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
+                </form>
+                <!--End of Toggler-->
+            </div>
+        </nav>
+    </header>
+    <!--End of navbar-->
+
+    <div class="container">
+        <!--Author Deatils-->
+        <form name="myForm" class="row g-3" class="was-validated" onsubmit="return submitData()">
+            <legend class="author">AUTHOR DETAIL's</legend>
+            <div class="col-md-4">
+                <label for="validationDefault01" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="validationDefault01" name="fname" required>
+            </div>
+            <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Last Name</label>
+                <input type="text" name="lname" class="form-control" id="validationDefault02" name="lname" required>
+            </div>
+            <div class="col-md-4">
+                <label for="validationDefaultUsername" class="form-label">Username</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="inputGroupPrepend2">@gmail.com <i class="fa"></i></span>
+
+                    <input type="text" class="form-control" id="validationDefaultUsername"
+                        aria-describedby="inputGroupPrepend2" required>
+                    <button class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                        type="button">Verify</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Gmail</a></li>
+                        <li><a class="dropdown-item">Yahoo!</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--End of Author Deatils-->
+            <div class="col-md-6">
+                <label for="validationDefault03" class="form-label">City</label>
+                <input type="text" class="form-control" id="validationDefault03" required>
+            </div>
+            <div class="col-md-3">
+                <label for="validationDefault04" class="form-label">State</label>
+                <select class="form-select" id="validationDefault04" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option>Delhi</option>
+                    <option>Maharashtra</option>
+                    <option>Jammu & Kashmir</option>
+                    <option>Punjab</option>
+                    <option>Rajasthan</option>
+                    <option>Gujarat</option>
+                    <option>Uttarakhand</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="validationDefault05" class="form-label">Zip Code</label>
+                <input type="text" class="form-control" id="validationDefault05" required>
+            </div>
+
+            <!--Blog Details-->
+            <legend class="blog">BLOG DETAIL's</legend>
+
+            <div class="form-floating mb-3 mt-3 ">
+                <input type="text" class="form-control" id="title" required placeholder="Enter Title" name="title">
+                <label for="title">Blog Title</label>
+            </div>
+
+            <div class="form-floating mb-3 mt-3">
+                <textarea class="form-control" rows="10" id="content" name="content" placeholder="Content goes here"
+                    required></textarea>
+                <label for="content">Blog Text</label>
+            </div>
+            <!--End of Blog Details-->
+
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                        Agree to terms and conditions
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <!--Footer nav-->
+    <footer class="foot">
+        <nav class="mt-5 navbar navbar-expand-sm bg-secondary navbar-dark bottom">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active text-warning " aria-current="page" href="#"><strong>iBlogs</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-decoration-underline text-dark" href="#">Term&conditions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-decoration-underline text-dark" href="#">Privacy Policies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark " href="#">Copyright © 2023 iBlogs . All rights reserved .</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+    <!--End of Footer Nav-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <script src="formSubmit.js"></script>
+
+</body>
+
+</html>
